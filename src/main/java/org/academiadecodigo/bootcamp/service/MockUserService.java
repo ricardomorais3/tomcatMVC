@@ -1,6 +1,8 @@
 package org.academiadecodigo.bootcamp.service;
 
 import org.academiadecodigo.bootcamp.model.User;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -14,9 +16,6 @@ public class MockUserService implements UserService{
 
     public MockUserService() {
         userMap = new HashMap<>();
-        addUser(new User("Pedro Antoninho", "pedro", "pedro.antoninho@academiadecodigo.org"));
-        addUser(new User("Sérgio Gouveia", "sergio", "sergio.gouveia@academiadecodigo.org"));
-        addUser(new User("Jorge Antunes", "jorge", "jorge.antunes@academiadecodigo.org"));
     }
 
     @Override
@@ -27,6 +26,8 @@ public class MockUserService implements UserService{
 
     @Override
     public void addUser(User user) {
+        //Logger byName = LogManager.getLogger(MockUserService.class.getName());
+        //byName.trace("Adicionei o user "+user.getUsername());
         userMap.put(user.getUsername(), user);
     }
 
@@ -41,6 +42,11 @@ public class MockUserService implements UserService{
     }
 
     @Override
+    public Map<String, User> findAll() {
+        return userMap;
+    }
+
+    @Override
     public int count() {
         return userMap.size();
     }
@@ -48,9 +54,5 @@ public class MockUserService implements UserService{
     @Override
     public void erase(){
         userMap.clear();
-    }
-
-    public Map<String, User> getUserMap() {
-        return userMap;
     }
 }

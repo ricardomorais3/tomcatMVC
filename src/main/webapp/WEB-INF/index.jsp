@@ -18,7 +18,7 @@
                 <form method="post" class="form-signin">
                     <input type="text" name="formName" class="form-control" placeholder="Username" required>
                     <input type="password" name="formPassword" class="form-control" placeholder="Password" required>
-                    <input type="text" name="formEmail"class="form-control" placeholder="Email" required>
+                    <input type="text" name="formEmail" class="form-control" placeholder="Email" required>
                     <button class="btn btn-lg btn-primary btn-block" type="submit">Register</button>
                 </form>
 

@@ -2,6 +2,8 @@ package org.academiadecodigo.bootcamp.service;
 
 import org.academiadecodigo.bootcamp.model.User;
 
+import java.util.Map;
+
 /**
  * Created by codecadet on 08/12/16.
  */
@@ -14,6 +16,8 @@ public interface UserService {
     void deleteUser(String username);
 
     User findByName(String username);
+
+    Map<String, User> findAll();
 
     int count();
 

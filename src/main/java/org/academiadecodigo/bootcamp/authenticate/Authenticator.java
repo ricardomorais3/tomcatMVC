@@ -8,7 +8,9 @@ import org.academiadecodigo.bootcamp.service.UserService;
  */
 public class Authenticator {
 
-    public static boolean authenticate(UserService userService, String username, String password) {
+    private UserService userService;
+
+    public boolean authenticate(String username, String password) {
         boolean toReturn = false;
         if (userService.authenticate(username, password)) {
             toReturn = true;
@@ -16,12 +18,16 @@ public class Authenticator {
         return toReturn;
     }
 
-    public static boolean register(UserService userService, User user) {
+    public boolean register(User user) {
 
         if (userService.findByName(user.getUsername()) == null) {
             userService.addUser(user);
             return true;
         }
         return false;
+    }
+
+    public void setUserService(UserService userService) {
+        this.userService = userService;
     }
 }

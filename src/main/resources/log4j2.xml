@@ -1,0 +1,27 @@
+<!--?xml version="1.0" encoding="UTF-8"?-->
+<configuration status="WARN">
+
+    <appenders>
+        <file name="File" filename="file.log" bufferedio="true">
+            <patternlayout pattern="%d{HH:mm:ss.SSS} [%t] %-5level %logger{36} - %msg%n"/>
+        </file>
+    </appenders>
+
+    <loggers>
+
+        <logger name="org.academiadecodigo.bootcamp.service.MockUserService" level="trace" additivity="false">
+            <appenderref ref="File"/>
+        </logger>
+
+        <logger name="org.academiadecodigo.bootcamp.controller.ControllerServlet" level="trace" additivity="false">
+            <appenderref ref="File"/>
+        </logger>
+
+        <root level="error">
+            <appenderref ref="File"/>
+        </root>
+
+    </loggers>
+
+</configuration>
+

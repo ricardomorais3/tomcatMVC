@@ -21,4 +21,8 @@
                                     definida no pom -->
     </servlet-mapping>
 
+    <listener>
+        <listener-class>org.academiadecodigo.bootcamp.app.AppMain</listener-class>
+    </listener>
+
 </web-app>
